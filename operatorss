@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class Shift extends Terenary{
+	
+	int i = 0;
+	int number = 3;
+	void LeftShift() {
+		
+		while(i<=3) {
+			
+			number = number<<4;
+			System.out.println(number);
+			i++;
+		}
+	}
+	void RightShift() {
+		
+		int i;
+		long number = 0xFFE3D;
+		for(i=0;i<=5;++i) {
+			
+			number = number>>3;
+		System.out.println(number);
+		}
+	}
+}
+class Terenary {
+	
+	String leap;
+	int year;
+	public void TerenaryOperator() {
+		
+		System.out.println("Enter the year");
+		Scanner LeapYear = new Scanner(System.in);
+		year = LeapYear.nextInt();
+		leap = ((year%4==0)||(year%100==0))?"leap year":"not leap year";
+		System.out.println(leap);
+	}
+}
+public class Unary {
+
+	public static void main(String[] args) {
+		
+		Shift object = new Shift();
+		System.out.println("LeftShift");
+		object.LeftShift();
+		System.out.println("RightShift");
+		object.RightShift();
+		object.TerenaryOperator();
+	}
+
+}
