@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+class ArithmeticOperation{
+	
+	int a,b,sum;
+	float num1,num2,difference;
+	double mul1,mul2,product;
+	int divisor,dividend,quotient;
+	int remainder;
+
+	void add() {
+	
+		System.out.println("Enter two numbers");
+		Scanner add1 = new Scanner(System.in);
+		Scanner add2 = new Scanner(System.in);
+		a=add1.nextInt() ;
+		b=add2.nextInt();
+		System.out.println(a + " + " + b);
+		sum = a + b;
+		System.out.println(sum);
+	}
+	void subtract() {
+		
+		System.out.println("Enter two numbers");
+		Scanner sub1 = new Scanner(System.in);
+		Scanner sub2 = new Scanner(System.in);
+		num1 = sub1.nextFloat();
+		num2 = sub2.nextFloat();
+		System.out.println(num1 + " - " + num2);	
+		difference = num1 - num2;
+		System.out.println(difference);
+	}
+	void multiplication() {
+		
+		System.out.println("Enter two numbers");
+		Scanner mul_1 = new Scanner(System.in);
+		Scanner mul_2 = new Scanner(System.in);
+		mul1=mul_1.nextDouble() ;
+		mul2=mul_2.nextDouble();
+		System.out.println(mul1 + " * " + mul2);
+		product = mul1 * mul2;
+		System.out.println(product);
+	}
+	void division() {
+		
+		System.out.println("Enter two numbers");
+		Scanner divisor1 = new Scanner(System.in);
+		Scanner dividend1 = new Scanner(System.in);
+		divisor=divisor1.nextInt() ;
+		dividend=dividend1.nextInt();
+		System.out.println(divisor + " / " + dividend);
+		quotient = divisor / dividend;
+		System.out.println(quotient);
+		remainder = divisor%dividend;
+		System.out.println("Remainder :"+remainder);
+	}
+}
+public class Calculator {
+
+	public static void main(String[] args) {
+		
+		String operations;
+		ArithmeticOperation  operation = new ArithmeticOperation();
+		System.out.println("enter the operation to be performed");
+        Scanner str = new Scanner(System.in);
+        operations = str.next();
+        switch(operations) {
+        
+        case "add":
+        	operation.add();
+        	break;
+        case "subtract":
+        	operation.subtract();
+        	break;
+        case "multiplication":
+        	operation.multiplication();
+        	break;
+        case "division":
+        	operation.division();
+        	break;
+        }
+	}
+
+}
