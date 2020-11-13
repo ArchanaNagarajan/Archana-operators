@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+class Bus{
+	
+	int NoOfSeats = 25;
+	public int SeatNo;
+	String SeatType;
+	
+	void input() {
+		
+		System.out.println("Enter your seat number");
+		Scanner value = new Scanner(System.in);
+		SeatNo = value.nextInt();
+		
+	}
+	String seatingArrangement() {
+		
+		if(SeatNo==1||SeatNo==6||SeatNo==7||SeatNo==12||SeatNo==13||SeatNo==18||SeatNo==19||SeatNo==25) {
+			
+			SeatType = "Right side Window seat";
+		}
+		else if(SeatNo==3||SeatNo==4||SeatNo==9||SeatNo==10||SeatNo==15||SeatNo==16||SeatNo==21||SeatNo==22) {
+			
+			 SeatType = "Left side Window Seat";
+		}else
+		{
+			SeatType = "Right Side next to window seat";
+		}
+		return SeatType;
+	}
+	void RowArrangement() {
+		
+	switch(SeatNo) {
+	
+	case 1: 
+	case 2 :
+	case 3 :
+		System.out.println("1st row");
+		break;
+	case 4: 
+	case 5 :
+	case 6 :
+		System.out.println("2nd row");
+		break;
+	case 7: 
+	case 8 :
+	case 9 :
+		System.out.println("3rd row");
+		break;
+	case 10: 
+	case 11:
+	case 12 :
+		System.out.println("4th row");
+		break;
+	case 13: 
+	case 14 :
+	case 15:
+		System.out.println("5th row");
+		break;
+	case 16: 
+	case 17:
+	case 18:
+		System.out.println("6th row");
+		break;
+	case 19: 
+	case 20:
+	case 21:
+		System.out.println("7th row");
+		break;
+	case 22: 
+	case 23:
+	case 24:
+	case 25:
+		System.out.println("last row");
+		break;
+	}
+		}
+		}
+public class ControlStatement {
+
+	public static void main(String[] args) {
+		
+		Bus bus = new Bus();
+		bus.input();
+		bus.RowArrangement();
+		System.out.println(bus.seatingArrangement());
+	}
+
+}
